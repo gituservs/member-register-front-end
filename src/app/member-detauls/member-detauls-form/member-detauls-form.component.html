@@ -1,0 +1,23 @@
+
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id"
+    [value]="service.formData.Id"/>
+    <div class="form-group">
+        <label>Member Name</label>
+        <input class="form-control form-control-lg" placeholder="Full Name" 
+        name="MemberName" #MemberName="ngModel" [(ngModel)]="service.formData.MemberName" required>
+    </div>
+    <div class="form-group">
+        <label>Member Mail</label>
+        <input class="form-control form-control-lg" placeholder="Member Mail" 
+        name="MemberMail" #MemberMail="ngModel" [(ngModel)]="service.formData.MemberMail" required>
+    </div>
+    <div class="form-group">
+        <label>Member Phone</label>
+        <input class="form-control form-control-lg" placeholder="Member Phone" 
+        name="MemberPhone" #MemberPhone="ngModel" [(ngModel)]="service.formData.MemberPhone" required>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid"> Submit </button>
+    </div>
+</form>
